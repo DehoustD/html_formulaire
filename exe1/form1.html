@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html lang="fr-BE">
+
+<head>
+    <meta charset="utf-8">
+    <title>Exe formulaires</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!--Lien d'évitement vers le contenu principal pour passer le menu-->
+    <div id="skip">
+        <a href="#main">Aller au contenu</a>
+    </div>
+
+    <!--Header où se trouve le logo, la tagline-->
+    <header role="banner">
+    </header>
+    <!--fin Header-->
+
+    <!--Navigation principale à placer dans une liste ul>li-->
+    <nav role="navigation">
+    </nav>
+    <!--Fin navigation principale-->
+
+    <!--Contenu principal-->
+    <main role="main" id="main" tabindex="-1">
+
+        <h1>Exercise formulaires</h1>
+        <form action="" method="post" id="reservation" name="reservation">
+            <h2>Exercise 1.</h2>
+            <fieldset>
+                <legend>Coordonnées</legend>
+                <p>
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" autofocus>
+                </p>
+
+                <p>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom">
+                </p>
+
+                <p>
+                    <label for="email">E-Mail :</label>
+                    <input type="email" id="email" name="email">
+                    <br aria-hidden="true"><small>Exemple : jean.dupont@gmail.com</small>
+                </p>
+
+                <p>
+                    <label for="phone">Téléphone :</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{2}" required>
+                    <br aria-hidden="true"><small>(Format : xxxx-xx-xx-xx)</small>
+                </p>
+
+                <p>
+                    <label for="reservdate">Date de naissance :</label>
+                    <input type="date" id="reservdate" name="reservdate" value="2022-01-01" min="2022-01-01"
+                        max="2022-12-30">
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <input type="submit" id="valid" name="valid" value="Je souhaite reserver.">
+            </fieldset>
+        </form>
+
+        <form action="" method="post" id="reservation" name="reservation">
+            <h2>Exercise 2.</h2>
+            <fieldset>
+                <legend>Type de livraison</legend>
+
+                <input type="radio" id="livraisonType" name="livraisonType" value="surplace" checked>
+                <label for="surplace">sur place</label>
+
+                <input type="radio" id="livraisonType" name="livraisonType" value="emporte">
+                <label for="emporte">à emporter</label>
+            </fieldset>
+        </form>
+
+        <form action="" method="post" id="reservation" name="reservation">
+            <h2>Exercise 3.</h2>
+
+            <fieldset>
+                <legend>Entrée</legend>
+                <!-- <label for="entree">Entrée :</label> -->
+                <select name="entree" id="entree">Entrée
+                    <option value="Entrée1" selected>Entrée1</option>
+                    <option value="Entrée2">Entrée2</option>
+                    <option value="Entrée3">Entrée3</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Plat</legend>
+
+                <select name="plat" id="plat">plat
+                    <option value="plat1" selected>plat1</option>
+                    <option value="plat2">plat2</option>
+                    <option value="plat3">plat3</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend>Dessert</legend>
+
+                <select name="dessert" id="dessert">Dessert
+                    <option value="dessert1" selected>Dessert1</option>
+                    <option value="dessert2">Dessert2</option>
+                    <option value="dessert3">Dessert3</option>
+                </select>
+            </fieldset>
+        </form>
+
+        <form action="" method="post" id="reservation" name="reservation">
+            <h2>Exercise 4.</h2>
+            <fieldset>
+
+                <legend>Evènement</legend>
+                <p>
+                    <input id="evenement1" type="checkbox" name="evenement" value="anniversaire">
+                    <label for="evenement1">Anniversaire</label>
+                </p>
+                <p>
+                    <input id="evenement2" type="checkbox" name="evenement" value="nouvelan">
+                    <label for="evenement2">Nouvel An</label>
+                </p>
+                <p>
+                    <input id="evenement3" type="checkbox" name="evenement" value="valentin">
+                    <label for="evenement3">St.Valentin</label>
+                </p>
+            </fieldset>
+        </form>
+
+        <form action="" method="post" id="personnel" name="personnel">
+            <h2>Exercise 5.</h2>
+            <fieldset>
+                <legend>Personnel</legend>
+                <p>
+                    <input type="radio" id="personnel1" name="personnel" value="seul" checked>
+                    <label for="personnel1">Seul</label>
+                </p>
+                <p>
+                    <input type="radio" id="personnel2" name="personnel" value="enfant">
+                    <label for="personnel2">enfant</label>
+                </p>
+                <p>
+                    <input type="radio" id="personnel3" name="personnel" value="pmr">
+                    <label for="personnel3">PMR</label>
+                </p>
+            </fieldset>
+        </form>
+
+        <form action="" method="post">
+            <h2>Exercise 6.</h2>
+            <fieldset>
+                <legend>Heure de réservation</legend>
+                <p>
+                    <label for="heure">Heure </label>
+                    <input type="time" id="heure" name="heure">
+                </p>
+                <p>
+                    <input id="paymenttype1" type="radio" name="paymenttype" value="encash" checked>
+                    <label for="paymenttype1">En cash</label>
+
+                    <input id="paymenttype2" type="radio" name="paymenttype" value="parcarte">
+                    <label for="paymenttype2">par carte</label>
+                </p>
+            </fieldset>
+        </form>
+
+        <form action="" method="post"></form>
+
+        <h2>Exercise 7.</h2>
+        <fieldset>
+            <input type="submit" name="valid" id="valid" value="réservation">
+        </fieldset>
+
+    </main>
+    <!--Fin contenu principal-->
+
+    <!--Footer où se trouvent des infos du site : mentions légales...-->
+    <footer role="contentinfo">
+    </footer>
+    <!--Fin footer-->
+</body>
+
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html lang="fr-BE">
+
+<head>
+    <meta charset="utf-8">
+    <title>La base des formulaires.</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!--Lien d'évitement vers le contenu principal pour passer le menu-->
+    <div id="skip">
+        <a href="#main">Aller au contenu</a>
+    </div>
+
+    <!--Header où se trouve le logo, la tagline-->
+    <header role="banner">
+    </header>
+    <!--fin Header-->
+
+    <!--Navigation principale à placer dans une liste ul>li-->
+    <nav role="navigation">
+        <ul id="menu-accordeon">
+            <li><a href="#">Lien menu 1</a>
+                <ul>
+                    <li><a href="#">lien sous menu 1</a></li>
+                    <li><a href="#">lien sous menu 1</a></li>
+                    <li><a href="#">lien sous menu 1</a></li>
+                    <li><a href="#">lien sous menu 1</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Lien menu 2</a>
+                <ul>
+                    <li><a href="#">Lien sous menu 2</a></li>
+                    <li><a href="#">Lien sous menu 2</a></li>
+                    <li><a href="#">Lien sous menu 2</a></li>
+                    <li><a href="#">Lien sous menu 2</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Lien menu 3</a>
+                <ul>
+                    <li><a href="#">Lien sous menu 3</a></li>
+                    <li><a href="#">Lien sous menu 3</a></li>
+                    <li><a href="#">Lien sous menu 3</a></li>
+                    <li><a href="#">Lien sous menu 3</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <!--Fin navigation principale-->
+
+    <!--Contenu principal-->
+    <main role="main" id="main" tabindex="-1">
+
+        <h1>Instructions dans les formulaires</h1>
+        <h2>Instructions spécifiques aux différents champs</h2>
+        <ul>
+            <li>Les nom, email et date de naissance sont obligatoires</li>
+            <li>La date de naissance doit être renseignée dans le format jj/mm/aaaa par exemple 21/01/1971</li>
+            <li>Le format de la carte d'identité doit être téléchargé au format word (.doc ou .docx) ou PDF</li>
+            <li>Vous recevrez automatiquement par email une copie de votre envoi. Dans le cas contraire, veuillez
+                d'abord vérifier dans vos spams, puis, le cas échéant, nous contacter au 000000000 pour connaître le
+                suivi de votre demande </li>
+        </ul>
+        <h2>formulaire d'inscription</h2>
+        <form id="inscription" action="" method="post" autocomplete="off">
+            <fieldset>
+                <legend>coordonnées</legend>
+                <p>
+                    <label for="nom">Nom :</label>
+                    <input type="text" name="nom" id="nom" aria-describedby="requis">
+                    <span id="requis">champ obligatoire</span>
+                </p>
+                <p>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" name="prenom" id="prenom" aria-describedby="requis">
+                    <span id="requis">test pour le prénom</span>
+                </p>
+                <p>
+                    <label for="email" id="emailLabel" tabindex="-1">E-Mail :</label>
+                    <input type="email" name="email" id="email" aria-labelledby="emailLabel formemail">
+                    <span id="formemail" tabindex="-1">exemple : jean.dupond@mail.com</span>
+                </p>
+                <p>
+                    <label for="pseudo">Votre pseudo :</label>
+                    <input type="text" id="pseudo" name="pseudo" aria-invalid="true" aria-describedby="err-msg" aria-required="true">
+                    <span id="err-msg">Votre pseudo doit être complété</span>
+                </p>
+
+                <!-- ------------------------------------------ -->
+
+                
+                <p>
+                    <label for="birthdate">Date de naissance :</label>
+                    <input type="date" id="birthdate" name="birthdate" aria-describedby="formatbirthday">
+                    <small id="formatbirthday">format : jj-mm-aaaa</small>
+                </p>
+                <p>
+                    <label for="copycard">copie de carte d'identité</label>
+                    <input type="file" name="card" id="card" required accept=".jpg, .jpeg, .png, .pdf" multiple aria-describedby="filetypedesc">
+                    <small id="filetypedesc"><br aria-hidden="true">accepte les .jpg, .jpeg, .png et .pdf</small>
+                </p>
+
+                <!-- essayer avec une date de naissance et la copie de carte d'identité -->
+
+
+            </fieldset>
+        </form>
+
+    </main>
+    <!--Fin contenu principal-->
+
+    <!--Footer où se trouvent des infos du site : mentions légales...-->
+    <footer role="contentinfo">
+    </footer>
+    <!--Fin footer-->
+</body>
+
+</html>

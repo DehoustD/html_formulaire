@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+<html lang="fr-BE">
+
+<head>
+    <meta charset="utf-8">
+    <title>Formulaires et labelle.</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<style>
+    .labelcache {
+        display: block;
+        position: absolute;
+        left: -999px;
+        top: -999px;
+    }
+</style>
+
+<body>
+    <!--Lien d'évitement vers le contenu principal pour passer le menu-->
+    <div id="skip"><a href="#main">Aller au contenu</a></div>
+
+    <!--Header où se trouve le logo, la tagline-->
+    <header role="banner"></header>
+    <!--fin Header-->
+
+    <!--Navigation principale à placer dans une liste ul>li-->
+    <nav role="navigation"></nav>
+    <!--Fin navigation principale-->
+
+    <!--Contenu principal-->
+    <main role="main" id="main" tabindex="-1">
+        <h1>Formulaires et label.</h1>
+
+        <h2>label associé explicitement</h2>
+
+        <h3>cacher le label</h3>
+
+        <!-- img/loupe.png -->
+        <label for="recherche" class="labelcache">Recherche :</label>
+        <input type="text" name="recherche" id="recherche">
+        <button type="submit">Rechercher</button>
+
+        <h3>cacher le label et le bouton image</h3>
+
+        <label for="recherche2" class="labelcache">Recherche :</label>
+        <input type="text" id="recherche2" name="recherche2">
+        <button type="submit"><img src="img/loupe.png" alt="rechercher" width="15" height="15" title="rechercher"></button>
+
+        <h3>Utiliser Aria-label</h3>
+
+        <input type="text" name="recherche3" aria-label="Rechercher un mot">
+        <button type="submit">Rechercher</button>
+
+        <h3>Utiliser aria-labelledby</h3>
+
+        <input type="text" name="recherche4" aria-labelledby="bouttonRecherche">
+        <button type="submit" id="bouttonRecherche">Recherche</button>
+
+        <h3>Utiliser l'attribut 'title'</h3>
+        <!-- pas bien ! pas beau ! -->
+        <input type="text" title="rechercherUnMot" name="recherche5">
+        <button type="submit">Rechercher</button>
+
+        <h3>Utiliser le placeholder</h3>
+        <!-- pas bien ! pas beau ! -->
+        <input type="text" name="recherche6" placeholder="rechercheUnMot">
+        <button type="submit">Rechercher</button>
+
+        <h2>Label associé implicitement</h2>
+
+        <label>Prénom : <input type="text" name="prenom"></label>
+        <br>
+        <label><input type="checkbox" name="inscription">S'inscrire à notre newsletter !</label>
+
+        <h2>Une image boutton</h2>
+        <p><input type="image" src="img/loupe.png" alt="rechercher"></p>
+
+    </main>
+    <!--Fin contenu principal-->
+
+    <!--Footer où se trouvent des infos du site : mentions légales...-->
+    <footer role="contentinfo"></footer>
+    <!--Fin footer-->
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+﻿<!doctype html>
+<html lang="fr-BE">
+	<head>
+	<meta charset="utf-8">
+	<title>Instructions dans les formulaires</title>
+</head>
+<style>
+	.labelcache{
+		display: block;
+		position: absolute;
+		left: -999px;
+		top: -999px;
+	}
+	input[aria-invalid="true"] {
+  border:1px solid red;
+}
+	</style>
+<body>
+	<h1>Instructions dans les formulaires</h1>
+	<h2>Instructions spécifiques aux différents champs</h2>
+	<ul>
+		<li>Les nom, email et date de naissance sont obligatoires</li>
+		<li>La date de naissance doit être renseignée dans le format jj/mm/aaaa par exemple 21/01/1971</li>
+		<li>Le format de la carte d'identité doit être téléchargé au format word (.doc ou .docx) ou PDF</li>
+		<li>Vous recevrez automatiquement par email une copie de votre envoi. Dans le cas contraire, veuillez d'abord vérifier dans vos spams, puis, le cas échéant, nous contacter au 000000000 pour connaître le suivi de votre demande </li>
+	</ul>
+	<h2>Formulaire d'inscription</h2>
+<form id="inscription" method="post" action="" autocomplete="off"><!--id sert à identifier le formulaire -->
+	<fieldset>
+     <legend> Vos coordonnées </legend>
+				<p>
+				<label for="nom"> Nom : </label>
+				<input type="text" name="nom" id="nom" aria-describedby="requis">
+				<span id="requis">Champ obligatoire</span> <!--id est valable pour toute la page-->
+				</p>
+				<!--aria-describedby permet de référencer une description par l'identifiant de son contenant uniquement par la synthèse vocale comme on doit le remettre pour le visuel pas du tout la meilleuire méthode pour l'handicap visuel-->
+				<p> 
+				<label for="prenom">Prénom : </label>
+				<input type="text" name="prenom" id="prenom" aria-describedby="requis"/>
+				</p>
+				<p>
+				<label id="emailLabel" for="email" tabindex="-1">E-Mail : </label>
+				<input type="email" name="email" id="email" aria-labelledby="emailLabel formemail">
+				<span id="formemail" tabindex="-1">Exemple : jean.dupont@mail.com</span>
+				<!--aria-labelledby précise l'id d'un élément utilisé pour étiqueter le champ-->
+				<!--si plusieurs id dans le aria-labelledby ou aria-describedby aussi bien l'id du label que l'id du span, utiliser tabindex-1 pour compatibilité internet explorer-->
+				<!--doubler par for/id pour rétro compatibilité notamment lecteurs braille-->
+				<!-- attention aria n'est utilisé que par les synthèses vocales et il faut continuer à faire attention aux autres handicaps-->
+				</p>
+					<p>
+					<label id="dateLabel" for="naissance" >Date de naissance : </label>
+					<input type="date" name="naissance" id="naissance" aria-labelledby="dateLabel" aria-describedby="formatDate" required/>
+					<span id="formatDate">JJ/MM/AAAA exemple 21/01/1971</span>
+				</p>
+				<p>
+					<label id="ciLabel" for="ci">Copie carte d'identité (word ou pdf): </label>
+					<input type="file" name="ci" id="ci" aria-labelledby="ciLabel" aria-describedby="formatFichier" accept=".doc,.docx,.pdf"/>
+					<span id="formatFichier" class="labelcache">Word ou PDF</span>
+				</p>
+				<p>
+					<label for="pseudo">Votre pseudo</label>
+					<input type="text" id="pseudo" name="pseudo" aria-invalid="true" aria-describedby="err-msg" aria-required="true">
+					<span id="err-msg">Votre pseudo doit être complété</span>
+					<!--aria-invalid permet de gérer les messages d'erreur pour les utilisateurs de synthèses vocales. Si le focus n'est pas mis sur le message en erreur mais sur une liste d'erreurs, on utilise aria-alert -->
+					<!--les statuts aria-invalid se gèrent avec du Javascript. Des bibliothèsques javascript gèrent très bien cela-->
+					<!--un message du type "Veuillez saisir ce champ" est insuffisant. On renseigne le nom du champ à compléter dans le message-->
+				</p>
+			</fieldset>
+			<br />
+			
+
+
+
+			<input type="submit" name="valid" id="valid" value="Je m'abonne" />
+	</form>
+</body>
+</html>
